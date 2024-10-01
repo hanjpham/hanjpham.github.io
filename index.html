@@ -1,4 +1,3 @@
-<!-- index.html (Home Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,50 +10,60 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #FFFDD0; /* Cream background */
-            color: #333;
+            background-color: white;
+            color: black;
         }
         header {
-            background-color: #333; /* Dark header */
-            color: #FFFDD0; /* Cream text */
+            background-color: black;
+            color: white;
             text-align: center;
             padding: 2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         nav {
-            background-color: #444; /* Slightly lighter than header */
+            background-color: #f0f0f0;
             padding: 0.5rem;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 100px;
+            z-index: 1000;
         }
         nav a {
-            color: #FFFDD0; /* Cream text */
+            color: black;
             text-decoration: none;
             padding: 0.5rem 1rem;
             margin: 0 0.5rem;
-            border: 1px solid #FFFDD0; /* Cream border */
+            border: 1px solid black;
             border-radius: 5px;
             display: inline-block;
             transition: all 0.3s ease;
         }
         nav a:hover {
-            background-color: #FFFDD0; /* Cream background on hover */
-            color: #333; /* Dark text on hover */
+            background-color: black;
+            color: white;
         }
         .container {
             width: 80%;
             max-width: 800px;
-            margin: auto;
+            margin: 180px auto 40px;
             padding: 20px;
         }
         h1 {
             margin-bottom: 0;
         }
         h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid black;
             padding-bottom: 10px;
         }
         a {
-            color: #333;
+            color: black;
+        }
+        section {
+            margin-bottom: 40px;
         }
     </style>
 </head>
@@ -64,91 +73,47 @@
         <p>PhD Student | Cornell University</p>
     </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
     </nav>
     <div class="container">
-        <h2>Welcome</h2>
-        <p>Hello! I'm a PhD student in [Your Department] at Cornell University. My research focuses on [brief description of your research area].</p>
-        <p>I'm passionate about [specific aspects of your field] and its potential to [impact or application of your research].</p>
-    </div>
-</body>
-</html>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Hello! I'm a PhD student in [Your Department] at Cornell University. My research focuses on [brief description of your research area].</p>
+            <p>I'm passionate about [specific aspects of your field] and its potential to [impact or application of your research].</p>
+        </section>
 
-<!-- research.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Your Name</title>
-    <style>
-        /* Same CSS as index.html */
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>PhD Student | Cornell University</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <div class="container">
-        <h2>Research</h2>
-        <h3>Current Projects</h3>
-        <ul>
-            <li><strong>Project 1:</strong> [Brief description of your main research project]</li>
-            <li><strong>Project 2:</strong> [Brief description of another research project or area of interest]</li>
-        </ul>
-        <h3>Research Interests</h3>
-        <ul>
-            <li>[Research Interest 1]</li>
-            <li>[Research Interest 2]</li>
-            <li>[Research Interest 3]</li>
-        </ul>
-        <h3>Publications</h3>
-        <ul>
-            <li>[Author List]. (Year). [Title of the paper]. <em>[Journal Name]</em>, [Volume](Issue), [Page range]. <a href="#">[DOI link]</a></li>
-            <!-- Add more publications as needed -->
-        </ul>
-    </div>
-</body>
-</html>
+        <section id="research">
+            <h2>Research</h2>
+            <h3>Current Projects</h3>
+            <ul>
+                <li><strong>Project 1:</strong> [Brief description of your main research project]</li>
+                <li><strong>Project 2:</strong> [Brief description of another research project or area of interest]</li>
+            </ul>
+            <h3>Research Interests</h3>
+            <ul>
+                <li>[Research Interest 1]</li>
+                <li>[Research Interest 2]</li>
+                <li>[Research Interest 3]</li>
+            </ul>
+            <h3>Publications</h3>
+            <ul>
+                <li>[Author List]. (Year). [Title of the paper]. <em>[Journal Name]</em>, [Volume](Issue), [Page range]. <a href="#">[DOI link]</a></li>
+                <!-- Add more publications as needed -->
+            </ul>
+        </section>
 
-<!-- contact.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Your Name</title>
-    <style>
-        /* Same CSS as index.html */
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>PhD Student | Cornell University</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <div class="container">
-        <h2>Contact Information</h2>
-        <p><strong>Email:</strong> [Your Cornell Email]@cornell.edu</p>
-        <p><strong>Office:</strong> [Your Office Location at Cornell]</p>
-        <p><strong>Department:</strong> [Your Department Name]</p>
-        <p><strong>Cornell University</strong><br>[Department Address]<br>Ithaca, NY 14853</p>
-        <h3>Professional Profiles</h3>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[Your LinkedIn Profile]">LinkedIn Profile</a></p>
-        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=[Your Google Scholar ID]">Google Scholar Profile</a></p>
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> [Your Cornell Email]@cornell.edu</p>
+            <p><strong>Office:</strong> [Your Office Location at Cornell]</p>
+            <p><strong>Department:</strong> [Your Department Name]</p>
+            <p><strong>Cornell University</strong><br>[Department Address]<br>Ithaca, NY 14853</p>
+            <h3>Professional Profiles</h3>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[Your LinkedIn Profile]">LinkedIn Profile</a></p>
+            <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=[Your Google Scholar ID]">Google Scholar Profile</a></p>
+        </section>
     </div>
 </body>
 </html>
