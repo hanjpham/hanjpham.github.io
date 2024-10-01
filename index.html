@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html (Home Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,44 +11,50 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #FFFDD0; /* Cream background */
             color: #333;
         }
         header {
-            background-color: #B31B1B;
-            color: white;
+            background-color: #333; /* Dark header */
+            color: #FFFDD0; /* Cream text */
             text-align: center;
-            padding: 1rem;
+            padding: 2rem 0;
         }
         nav {
-            background-color: #222;
+            background-color: #444; /* Slightly lighter than header */
             padding: 0.5rem;
+            text-align: center;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: white;
+        nav a {
+            color: #FFFDD0; /* Cream text */
             text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border: 1px solid #FFFDD0; /* Cream border */
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #FFFDD0; /* Cream background on hover */
+            color: #333; /* Dark text on hover */
         }
         .container {
             width: 80%;
+            max-width: 800px;
             margin: auto;
-            overflow: hidden;
             padding: 20px;
         }
         h1 {
             margin-bottom: 0;
         }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
         a {
-            color: #B31B1B;
+            color: #333;
         }
     </style>
 </head>
@@ -58,17 +64,14 @@
         <p>PhD Student | Cornell University</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <div class="container">
-        <h2>Welcome to My Academic Website</h2>
-        <p>Hello! I'm a PhD student in [Your Department] at Cornell University. My research focuses on [brief description of your research area]. I'm passionate about [specific aspects of your field] and its potential to [impact or application of your research].</p>
-        <p>On this site, you'll find information about my current research projects, publications, and academic background. Feel free to explore and reach out if you have any questions or potential collaborations in mind.</p>
+        <h2>Welcome</h2>
+        <p>Hello! I'm a PhD student in [Your Department] at Cornell University. My research focuses on [brief description of your research area].</p>
+        <p>I'm passionate about [specific aspects of your field] and its potential to [impact or application of your research].</p>
     </div>
 </body>
 </html>
@@ -90,12 +93,9 @@
         <p>PhD Student | Cornell University</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <div class="container">
         <h2>Research</h2>
@@ -110,53 +110,10 @@
             <li>[Research Interest 2]</li>
             <li>[Research Interest 3]</li>
         </ul>
-        <h3>Academic Background</h3>
-        <p>I'm currently pursuing my PhD in [Your Field] at Cornell University under the supervision of [Your Advisor's Name]. My research is supported by [any grants or fellowships, if applicable].</p>
-        <p>Prior to joining Cornell, I received my [Previous Degree] from [Previous Institution] where I focused on [previous research or academic focus].</p>
-    </div>
-</body>
-</html>
-
-<!-- publications.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Your Name</title>
-    <style>
-        /* Same CSS as index.html */
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>PhD Student | Cornell University</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h2>Publications</h2>
-        <h3>Journal Articles</h3>
+        <h3>Publications</h3>
         <ul>
             <li>[Author List]. (Year). [Title of the paper]. <em>[Journal Name]</em>, [Volume](Issue), [Page range]. <a href="#">[DOI link]</a></li>
             <!-- Add more publications as needed -->
-        </ul>
-        <h3>Conference Proceedings</h3>
-        <ul>
-            <li>[Author List]. (Year). [Title of the paper]. In <em>Proceedings of [Conference Name]</em> (pp. [Page range]). [Publisher]. <a href="#">[DOI or link]</a></li>
-            <!-- Add more conference papers as needed -->
-        </ul>
-        <h3>Presentations</h3>
-        <ul>
-            <li>[Your Name]. (Year, Month). [Title of the presentation]. [Poster/Talk] presented at [Conference/Event Name], [Location].</li>
-            <!-- Add more presentations as needed -->
         </ul>
     </div>
 </body>
@@ -179,12 +136,9 @@
         <p>PhD Student | Cornell University</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <div class="container">
         <h2>Contact Information</h2>
@@ -195,7 +149,6 @@
         <h3>Professional Profiles</h3>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[Your LinkedIn Profile]">LinkedIn Profile</a></p>
         <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=[Your Google Scholar ID]">Google Scholar Profile</a></p>
-        <p><strong>ORCID:</strong> <a href="https://orcid.org/[Your ORCID ID]">ORCID Profile</a></p>
     </div>
 </body>
 </html>
