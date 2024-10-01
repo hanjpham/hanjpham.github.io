@@ -3,79 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - PhD Student at Cornell University</title>
+    <title>Han Pham - PhD Student at Cornell University</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: white;
-            color: black;
+            background-color: #FFFAF0; /* Warm white */
+            color: #333;
         }
         header {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background-color: #FFFAF0;
+            color: #333;
+            text-align: left;
+            padding: 2rem 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+        }
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #DDD; /* Placeholder color */
+            margin-right: 20px;
         }
         nav {
-            background-color: #f0f0f0;
-            padding: 0.5rem;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 100px;
-            z-index: 1000;
+            padding: 0.5rem 10%;
+            text-align: right;
         }
         nav a {
-            color: black;
+            color: #333;
             text-decoration: none;
             padding: 0.5rem 1rem;
             margin: 0 0.5rem;
-            border: 1px solid black;
+            border: 1px solid #333;
             border-radius: 5px;
             display: inline-block;
             transition: all 0.3s ease;
         }
         nav a:hover {
-            background-color: black;
-            color: white;
+            background-color: #333;
+            color: #FFFAF0;
         }
         .container {
             width: 80%;
             max-width: 800px;
-            margin: 180px auto 40px;
+            margin: 40px auto;
             padding: 20px;
         }
         h1 {
             margin-bottom: 0;
         }
         h2 {
-            border-bottom: 2px solid black;
+            border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
         a {
-            color: black;
+            color: #333;
         }
         section {
             margin-bottom: 40px;
+            display: none;
+        }
+        #home {
+            display: block;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>PhD Student | Cornell University</p>
+        <div class="profile-container">
+            <div class="profile-photo"></div>
+            <div>
+                <h1>Han Pham</h1>
+                <p>PhD Student | Cornell University</p>
+            </div>
+        </div>
     </header>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('research')">Research</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
     </nav>
     <div class="container">
         <section id="home">
@@ -115,5 +129,16 @@
             <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=[Your Google Scholar ID]">Google Scholar Profile</a></p>
         </section>
     </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
