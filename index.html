@@ -119,7 +119,81 @@
             opacity: 0.8;
         }
         .affiliation {
-             color: var(--medium-gray);
+            color: var(--medium-gray);
+        }
+        footer {
+            background-color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        .footer-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--cornell-red);
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            header {
+                padding: 20px 0;
+            }
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            nav {
+                margin: 20px 0;
+            }
+            nav a {
+                padding: 8px 15px;
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            nav a {
+                padding: 6px 10px;
+                margin: 0 3px;
+                font-size: 0.8em;
+            }
+            .social-links a, .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -129,11 +203,6 @@
             <img src="prf.jpg" alt="Han Pham" class="profile-photo">
             <h1>Han Pham</h1>
             <p class="affiliation">PhD Student, Brooks School of Public Policy, Cornell University</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/hanpham" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/hanjpham" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank"><i class="fas fa-university"></i></a>
-            </div>
         </header>
         
         <nav>
@@ -143,12 +212,12 @@
             <a href="#" onclick="showSection('personal')" id="personalNav">Personal</a>
         </nav>
 
-      <section id="home">
-    <h2>Welcome</h2>
-    <p>Hello! I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
-    <p>Prior to my doctoral studies, I completed my bachelor's degree in Mathematical Economics at Temple University in Philadelphia.</p>
-    <p>I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
-</section>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Hello! I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
+            <p>Prior to my doctoral studies, I completed my bachelor's degree in Mathematical Economics at Temple University in Philadelphia. This background has provided me with a strong foundation in quantitative analysis and economic theory, which I now apply to my research in public policy and health care economics.</p>
+            <p>I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
+        </section>
 
         <section id="research">
             <h2>Research</h2>
@@ -177,11 +246,17 @@
 
         <section id="personal">
             <h2>Personal</h2>
-            <p>I currently live in Ithaca and Buffalo with my partner and our cat Otto. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery and Saigon Bangkok. My home town is Bien Hoa, Vietnam.</p>
-            <div class="donation-links">
-                <a href="https://www.tenlivesclub.com/donate" target="_blank">Ten Lives Club (Buffalo)</a>
-            </div>
+            <p>I currently live in Ithaca and Buffalo with my partner and our cat. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery and Saigon Bangkok. My home town is Bien Hoa, Vietnam.</p>
+            <p><a href="https://www.gardenwalkbuffalo.com/" target="_blank">Garden Walk Buffalo</a></p>
         </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/hanpham" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.cornell.edu/your-profile" target="_blank"><i class="fas fa-university"></i></a>
+            </div>
+        </footer>
     </div>
 
     <script>
