@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Han Pham - PhD Student at Cornell University</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
             --cornell-red: #B31B1B;
@@ -15,12 +16,12 @@
         }
         body {
             font-family: 'Lora', serif;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: var(--light-gray);
             color: var(--dark-gray);
-            font-size: 18px;
+            font-size: 16px;
         }
         .container {
             max-width: 900px;
@@ -47,19 +48,19 @@
             color: var(--dark-gray);
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin: 10px 0 5px;
             font-weight: 700;
         }
         h2 {
-            font-size: 2em;
+            font-size: 1.8em;
             padding-bottom: 10px;
             margin-top: 0;
             color: var(--cornell-red);
             border-bottom: 2px solid var(--cornell-red);
         }
         h3 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: var(--medium-gray);
         }
         nav {
@@ -74,7 +75,7 @@
             text-decoration: none;
             padding: 10px 20px;
             margin: 0 10px;
-            font-size: 1.1em;
+            font-size: 1em;
             transition: all 0.3s ease;
         }
         nav a:hover, nav a.active {
@@ -103,15 +104,23 @@
             border-radius: 5px;
             margin-top: 20px;
         }
-        .social-links a, .donation-links a {
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
             display: inline-block;
             margin: 0 15px;
             color: var(--cornell-red);
             text-decoration: none;
             font-weight: 700;
+            font-size: 1.2em;
         }
-        .social-links a:hover, .donation-links a:hover {
-            text-decoration: underline;
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        .affiliation {
+            font-style: italic;
+            color: var(--medium-gray);
         }
     </style>
 </head>
@@ -120,6 +129,12 @@
         <header>
             <img src="prf.jpg" alt="Han Pham" class="profile-photo">
             <h1>Han Pham</h1>
+            <p class="affiliation">PhD Student, Brooks School of Public Policy, Cornell University</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hanpham" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.cornell.edu/your-profile" target="_blank"><i class="fas fa-university"></i></a>
+            </div>
         </header>
         
         <nav>
@@ -137,16 +152,16 @@
 
         <section id="research">
             <h2>Research</h2>
+            <h3>Research Interests</h3>
+            <ul>
+                <li>Health care access</li>
+                <li>Policy evaluation</li>
+                <li>Physician workforce</li>
+            </ul>
             <h3>Current Projects</h3>
             <ul>
                 <li>[Project 1 Title]</li>
                 <li>[Project 2 Title]</li>
-            </ul>
-            <h3>Research Interests</h3>
-            <ul>
-                <li>[Research Interest 1]</li>
-                <li>[Research Interest 2]</li>
-                <li>[Research Interest 3]</li>
             </ul>
         </section>
 
@@ -158,18 +173,13 @@
                 <p><strong>Department:</strong> Brooks School of Public Policy</p>
                 <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
             </div>
-            <h3>Professional Profiles</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/hanpham" target="_blank">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=HanPhamID" target="_blank">Google Scholar</a>
-            </div>
         </section>
 
         <section id="personal">
             <h2>Personal</h2>
-            <p>I currently live in Ithaca and Buffalo with my partner and our cat Otto. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery, and Saigon Bangkok. My home town is Bien Hoa, Vietnam.</p>
+            <p>I currently live in Ithaca and Buffalo with my partner and our cat. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery and Saigon Bangkok. My home town is Bien Hoa, Vietnam.</p>
             <div class="donation-links">
-                <a href="https://www.tenlivesclub.com/donate" target="_blank">Ten Lives Club (Buffalo)</a>
+                <a href="https://www.tenlivesclub.com/donate" target="_blank">Donate to Ten Lives Club (Buffalo)</a>
             </div>
         </section>
     </div>
@@ -181,7 +191,6 @@
             });
             document.getElementById(sectionId).style.display = 'block';
             
-            // Update active nav link
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
             });
