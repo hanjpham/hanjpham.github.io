@@ -5,91 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Han Pham - PhD Student at Cornell University</title>
     <style>
+        :root {
+            --main-bg-color: #FFFAF0;
+            --text-color: #333;
+            --accent-color: #B31B1B; /* Cornell Red */
+            --secondary-color: #F0EAD6; /* Lighter warm tone */
+        }
         body {
-            font-family: Arial, sans-serif; /* Fallback font */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #FFFAF0; /* Warm white */
-            color: #333;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
         .container {
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .profile-section {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--secondary-color);
+            border-radius: 8px 8px 0 0;
         }
         .profile-photo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            margin: 20px auto;
-            background-color: #DDD; /* Placeholder color */
+            margin: 0 auto 20px;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
         h1, h2, h3 {
-            margin-top: 30px;
+            color: var(--accent-color);
+        }
+        h1 {
+            margin: 10px 0 5px;
         }
         nav {
             margin: 20px 0;
+            padding: 10px 0;
+            border-top: 1px solid var(--secondary-color);
+            border-bottom: 1px solid var(--secondary-color);
         }
         nav a {
-            color: #333;
+            color: var(--text-color);
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: 1px solid #333;
-            border-radius: 5px;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: 1px solid var(--accent-color);
+            border-radius: 20px;
             display: inline-block;
             transition: all 0.3s ease;
         }
-        nav a:hover {
-            background-color: #333;
-            color: #FFFAF0;
+        nav a:hover, nav a.active {
+            background-color: var(--accent-color);
+            color: white;
         }
         section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             display: none;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         #home {
             display: block;
         }
         ul {
             list-style-type: none;
-            padding: 0;
+            padding-left: 0;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        .contact-info {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="prf.jpg" alt="Han Pham" class="profile-photo">        
-        <h1>Han Pham</h1>
-        <p>PhD Student | Brooks School of Public Policy, Cornell University</p>
+        <div class="profile-section">
+            <img src="prf.jpg" alt="Han Pham" class="profile-photo">
+            <h1>Han Pham</h1>
+            <p>PhD Student in Public Policy</p>
+            <p>Brooks School of Public Policy, Cornell University</p>
+        </div>
         
         <nav>
-            <a href="#" onclick="showSection('home')">Home</a>
-            <a href="#" onclick="showSection('research')">Research</a>
-            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
+            <a href="#" onclick="showSection('research')" id="researchNav">Research</a>
+            <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
         </nav>
 
         <section id="home">
             <h2>Welcome</h2>
-            <p>Hello! I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization and public policies in the health care markets.</p>
-            <p>I'm passionate about leveraging economic principles to understand and improve health care systems and policies.</p>
+            <p>Hello! I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
+            <p>I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
         </section>
 
         <section id="research">
             <h2>Research</h2>
             <h3>Current Projects</h3>
             <ul>
-                <li><strong>Project 1:</strong> [Brief description of your main research project in health care economics]</li>
-                <li><strong>Project 2:</strong> [Brief description of another project related to public policy in health care]</li>
+                <li><strong>Health Care Provider Behavior:</strong> Analyzing the impact of financial incentives on physician decision-making and patient outcomes in the U.S. health care system.</li>
+                <li><strong>Insurance Market Dynamics:</strong> Investigating the effects of policy changes on insurance market competition and consumer welfare in the Affordable Care Act marketplaces.</li>
             </ul>
             <h3>Research Interests</h3>
             <ul>
@@ -97,22 +150,23 @@
                 <li>Industrial Organization in Health Care Markets</li>
                 <li>Public Health Policy</li>
                 <li>Health Care Economics</li>
-            </ul>
-            <h3>Publications</h3>
-            <ul>
-                <li>[Author List including Han Pham]. (Year). [Title of the paper related to health care economics]. <em>[Journal Name]</em>, [Volume](Issue), [Page range]. <a href="#">[DOI link]</a></li>
+                <li>Econometric Methods in Policy Evaluation</li>
             </ul>
         </section>
 
         <section id="contact">
             <h2>Contact Information</h2>
-            <p><strong>Email:</strong> [Your Cornell Email]@cornell.edu</p>
-            <p><strong>Office:</strong> [Your Office Location at Cornell]</p>
-            <p><strong>Department:</strong> Brooks School of Public Policy</p>
-            <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> hp452@cornell.edu</p>
+                <p><strong>Office:</strong> Room 3308, Martha Van Rensselaer Hall</p>
+                <p><strong>Department:</strong> Brooks School of Public Policy</p>
+                <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
+            </div>
             <h3>Professional Profiles</h3>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[Your LinkedIn Profile]">LinkedIn Profile</a></p>
-            <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=[Your Google Scholar ID]">Google Scholar Profile</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hanpham" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=HanPhamID" target="_blank">Google Scholar</a>
+            </div>
         </section>
     </div>
 
@@ -122,6 +176,12 @@
                 section.style.display = 'none';
             });
             document.getElementById(sectionId).style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById(sectionId + 'Nav').classList.add('active');
         }
     </script>
 </body>
