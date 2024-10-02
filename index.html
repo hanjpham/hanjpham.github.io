@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Han Pham - PhD Student at Cornell University</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
             --cornell-red: #B31B1B;
@@ -14,14 +13,22 @@
             --light-gray: #F5F5F5;
             --white: #FFFFFF;
         }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Lora', serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
             background-color: var(--light-gray);
             color: var(--dark-gray);
             font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper {
+            flex: 1 0 auto;
         }
         .container {
             max-width: 900px;
@@ -104,24 +111,16 @@
             border-radius: 5px;
             margin-top: 20px;
         }
-        .social-links {
-            margin-top: 20px;
+        .resume-header {
+            text-align: center;
+            margin-top: 10px;
         }
-        .social-links a {
-            display: inline-block;
-            margin: 0 15px;
-            color: var(--cornell-red);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2em;
-        }
-        .social-links a:hover {
-            opacity: 0.8;
-        }
-        .affiliation {
+        .resume-header p {
+            margin: 5px 0;
             color: var(--medium-gray);
         }
         footer {
+            flex-shrink: 0;
             background-color: var(--white);
             padding: 20px 0;
             text-align: center;
@@ -130,12 +129,14 @@
         .footer-links a {
             display: inline-block;
             margin: 0 15px;
-            color: var(--cornell-red);
-            text-decoration: none;
-            font-size: 1.5em;
         }
-        .footer-links a:hover {
-            opacity: 0.8;
+        .footer-links img {
+            width: 32px;
+            height: 32px;
+            transition: opacity 0.3s ease;
+        }
+        .footer-links img:hover {
+            opacity: 0.7;
         }
 
         /* Media Queries for Responsive Design */
@@ -191,110 +192,83 @@
                 margin: 0 3px;
                 font-size: 0.8em;
             }
-            .social-links a, .footer-links a {
+            .footer-links a {
                 margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-      <header>
-    <img src="prf.jpg" alt="Han Pham" class="profile-photo">
-    <h1>Han Pham</h1>
-    <div class="resume-header">
-        <p>PhD Student</p>
-        <p>Brooks School of Public Policy, Cornell University</p>
-        <p>hp452@cornell.edu</p>
+    <div class="content-wrapper">
+        <div class="container">
+            <header>
+                <img src="prf.jpg" alt="Han Pham" class="profile-photo">
+                <h1>Han Pham</h1>
+                <div class="resume-header">
+                    <p>PhD Student</p>
+                    <p>Brooks School of Public Policy, Cornell University</p>
+                    <p>hp452@cornell.edu</p>
+                </div>
+            </header>
+            
+            <nav>
+                <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
+                <a href="#" onclick="showSection('research')" id="researchNav">Research</a>
+                <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
+                <a href="#" onclick="showSection('personal')" id="personalNav">Personal</a>
+            </nav>
+
+            <section id="home">
+                <h2>Welcome</h2>
+                <p>I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
+                <p>Prior to my doctoral studies, I completed my bachelor's degree in Mathematical Economics at Temple University in Philadelphia. I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
+            </section>
+
+            <section id="research">
+                <h2>Research</h2>
+                <h3>Research Interests</h3>
+                <ul>
+                    <li>Health care access</li>
+                    <li>Policy evaluation</li>
+                    <li>Physician workforce</li>
+                </ul>
+                <h3>Current Projects</h3>
+                <ul>
+                    <li>Updating</li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> hp452@cornell.edu</p>
+                    <p><strong>Office:</strong> Room 3308, Martha Van Rensselaer Hall</p>
+                    <p><strong>Department:</strong> Brooks School of Public Policy</p>
+                    <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
+                </div>
+            </section>
+
+            <section id="personal">
+                <p>I live with my partner and our cat in Ithaca and Buffalo. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery, and Saigon Bangkok. I was born and raised in Bien Hoa, Vietnam.</p>
+                <p><a href="https://www.gardensbuffaloniagara.com/garden-walk-buffalo" target="_blank">Garden Walk Buffalo</a></p>
+                <p><a href="https://www.tenlivesclub.com/" target="_blank">Ten Lives Club Buffalo</a></p>
+            </section>
+        </div>
     </div>
-</header>
 
-<style>
-    /* Add this to your existing CSS */
-    .resume-header {
-        text-align: center;
-        margin-top: 10px;
-    }
-    .resume-header p {
-        margin: 5px 0;
-        color: var(--medium-gray);
-    }
-</style>
-        
-        <nav>
-            <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
-            <a href="#" onclick="showSection('research')" id="researchNav">Research</a>
-            <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
-            <a href="#" onclick="showSection('personal')" id="personalNav">Personal</a>
-        </nav>
-
-        <section id="home">
-            <h2>Welcome</h2>
-            <p>I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
-            <p>Prior to my doctoral studies, I completed my bachelor's degree in Mathematical Economics at Temple University in Philadelphia. I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
-        </section>
-
-        <section id="research">
-            <h2>Research</h2>
-            <h3>Research Interests</h3>
-            <ul>
-                <li>Health care access</li>
-                <li>Policy evaluation</li>
-                <li>Physician workforce</li>
-            </ul>
-            <h3>Current Projects</h3>
-            <ul>
-            Updating
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> hp452@cornell.edu</p>
-                <p><strong>Office:</strong> Room 3308, Martha Van Rensselaer Hall</p>
-                <p><strong>Department:</strong> Brooks School of Public Policy</p>
-                <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
-            </div>
-        </section>
-
-        <section id="personal">
-    <p>I live with my partner and our cat in Ithaca and Buffalo. Our favorite restaurants in Buffalo are Lombardo's, Overwinter Coffee, Butter Block Bakery, and Saigon Bangkok. I was born and raised in Bien Hoa, Vietnam.</p>
-    <p><a href="https://www.gardensbuffaloniagara.com/garden-walk-buffalo" target="_blank">Garden Walk Buffalo</a></p>
-        <p><a href="https://www.tenlivesclub.com/" target="_blank">Ten Lives Club Buffalo</a></p>
-        
-</section>
-
-       <style>
-    /* Add this to your existing CSS */
-    .footer-links a {
-        display: inline-block;
-        margin: 0 15px;
-    }
-    .footer-links img {
-        width: 32px;
-        height: 32px;
-        transition: opacity 0.3s ease;
-    }
-    .footer-links img:hover {
-        opacity: 0.7;
-    }
-</style>
-
-<footer>
-    <div class="footer-links">
-        <a href="https://www.linkedin.com/in/hanjpham" target="_blank">
-            <img src="linkedinlogo.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/hanjpham" target="_blank">
-            <img src="githublogo.png" alt="GitHub">
-        </a>
-        <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank">
-            <img src="cornelllogo.png" alt="Cornell">
-        </a>
-    </div>
-</footer>
-    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/hanjpham" target="_blank">
+                <img src="linkedinlogo.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/hanjpham" target="_blank">
+                <img src="githublogo.png" alt="GitHub">
+            </a>
+            <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank">
+                <img src="cornelllogo.png" alt="Cornell">
+            </a>
+        </div>
+    </footer>
 
     <script>
         function showSection(sectionId) {
