@@ -199,11 +199,27 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <img src="prf.jpg" alt="Han Pham" class="profile-photo">
-            <h1>Han Pham</h1>
-            <p class="affiliation">PhD Student, Brooks School of Public Policy, Cornell University</p>
-        </header>
+      <header>
+    <img src="prf.jpg" alt="Han Pham" class="profile-photo">
+    <h1>Han Pham</h1>
+    <div class="resume-header">
+        <p>PhD Student</p>
+        <p>Brooks School of Public Policy, Cornell University</p>
+        <p>hp452@cornell.edu</p>
+    </div>
+</header>
+
+<style>
+    /* Add this to your existing CSS */
+    .resume-header {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .resume-header p {
+        margin: 5px 0;
+        color: var(--medium-gray);
+    }
+</style>
         
         <nav>
             <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
