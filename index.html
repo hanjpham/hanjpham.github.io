@@ -8,28 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cornell-red: #B31B1B;
-            --cornell-red-dark: #8B1515;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-            --light-gray: #F5F5F5;
+            --primary: #2c3e50;
+            --primary-light: #34495e;
+            --accent: #3498db;
+            --dark-gray: #2c3e50;
+            --medium-gray: #7f8c8d;
+            --light-gray: #f8f9fa;
             --white: #FFFFFF;
             --sidebar-width: 280px;
         }
         
         html {
             scroll-behavior: smooth;
+            background-color: var(--white);
         }
 
         body {
             font-family: 'Lora', serif;
-            line-height: 1.6;
-            background-color: var(--light-gray);
+            line-height: 1.8;
             color: var(--dark-gray);
             font-size: 16px;
             margin: 0;
             min-height: 100vh;
             display: flex;
+            background-color: var(--light-gray);
         }
 
         .sidebar {
@@ -38,7 +40,7 @@
             position: fixed;
             height: 100vh;
             padding: 40px 20px;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,6 +51,8 @@
             flex: 1;
             padding: 40px;
             max-width: calc(100% - var(--sidebar-width));
+            background-color: var(--white);
+            min-height: 100vh;
         }
 
         .profile-photo {
@@ -97,16 +101,13 @@
 
         nav a:hover, nav a.active {
             color: var(--white);
-            background-color: var(--cornell-red);
+            background-color: var(--primary-light);
         }
 
         section {
             display: none;
             animation: fadeIn 0.5s;
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 0 40px 30px 0;
             margin-bottom: 30px;
         }
 
@@ -115,39 +116,56 @@
         }
 
         h2 {
-            color: var(--cornell-red);
-            border-bottom: 2px solid var(--cornell-red);
+            color: var(--primary);
+            border-bottom: 2px solid var(--light-gray);
             padding-bottom: 10px;
             margin-top: 0;
+            font-size: 1.8em;
         }
 
         h3 {
-            color: var(--medium-gray);
-            margin-top: 25px;
+            color: var(--primary);
+            margin-top: 40px;
+            font-size: 1.4em;
         }
 
         .research-item {
-            margin-bottom: 25px;
-            padding: 15px;
+            margin-bottom: 35px;
+            padding: 25px;
             background-color: var(--light-gray);
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .research-item:hover {
             transform: translateX(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .research-item h4 {
-            margin: 0 0 10px 0;
-            color: var(--cornell-red-dark);
+            margin: 0 0 15px 0;
+            color: var(--primary);
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+
+        .research-item p {
+            margin: 8px 0;
+            color: var(--medium-gray);
+        }
+
+        .research-item .collaborators {
+            font-style: italic;
+            color: var(--medium-gray);
+            margin-top: 10px;
         }
 
         .contact-info {
             background-color: var(--light-gray);
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             margin-top: 20px;
+            line-height: 1.8;
         }
 
         .footer-links {
@@ -155,16 +173,35 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            padding-top: 40px;
         }
 
         .footer-links img {
             width: 24px;
             height: 24px;
+            opacity: 0.7;
             transition: opacity 0.3s ease;
         }
 
         .footer-links a:hover img {
-            opacity: 0.7;
+            opacity: 1;
+        }
+
+        .presentation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .presentation-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .presentation-list li:hover {
+            transform: translateX(10px);
         }
 
         @keyframes fadeIn {
@@ -243,8 +280,7 @@
     <main class="main-content">
         <section id="home">
             <h2>Welcome</h2>
-            <p>I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University, with an expected graduation in Spring 2026. My research focuses on health economics, industrial organization, and policy analysis, with particular emphasis on healthcare markets and policy implementation.</p>
-            <p>Prior to my doctoral studies, I completed my bachelor's degree in Applied Mathematics with honors at Temple University.</p>
+            <p>I am a PhD candidate in Public Policy at Cornell University's Brooks School of Public Policy. My research integrates methods from health economics to study healthcare policy and market design. My work focuses on understanding how institutional structures and policy reforms shape healthcare delivery and access. I hold a bachelor's degree in Applied Mathematics with honors from Temple University.</p>
         </section>
 
         <section id="research">
@@ -253,33 +289,36 @@
             <h3>Job Market Paper</h3>
             <div class="research-item">
                 <h4>Funding Reform and Physician Supply: Evaluating Policy Implementation Using Choice Models</h4>
+                <p>This paper examines how changes in healthcare funding mechanisms influence physician workforce distribution, with implications for access to care in underserved areas.</p>
             </div>
 
             <h3>Works in Progress</h3>
             <div class="research-item">
                 <h4>Medical Education Training and Quality of Care: Evidence from Closings of Residency Programs</h4>
-                <p>with Sean Nicholson and Colleen Carey</p>
+                <p class="collaborators">with Sean Nicholson and Colleen Carey</p>
+                <p>Analyzing the impact of residency program closures on healthcare quality to study the supply of medical care.</p>
             </div>
             <div class="research-item">
-                <h4>Dangerous Alternatives: E-cigarette Health Risks and Perception in Smoking Cessation</h4>
-                <p>with Alan Mathios and Don Kenkel</p>
+                <h4>E-cigarette and Smoking Cessation in Consumer Data</h4>
+                <p class="collaborators">with Alan Mathios and Don Kenkel</p>
+                <p>Harnessing the richness of consumer data, this project study patterns of electronic cigarette adoption and associations with smoking cessation.</p>
             </div>
 
             <h3>Conference Proceedings</h3>
             <div class="research-item">
                 <h4>Business Cycles and Adolescent Mental Health: Evidence from Suicide Rates</h4>
-                <p>with Catherine Maclean</p>
-                <p><em>Department of Economics Undergraduate Paper Award, Runner-up, 2020</em></p>
+                <p class="collaborators">with Catherine Maclean</p>
+                <p><em>2nd Best Paper by an Undergraduate Student, Department of Economics, 2020</em></p>
             </div>
             <div class="research-item">
                 <h4>No Country for Young Women? The Impact of Restrictive Legislation on Maternal Health and Birth Outcomes in Texas</h4>
-                <p>with Michael Leeds (2019)</p>
+                <p><em>2nd Best Paper by an Undergraduate Student, Department of Economics, 2020</em></p>
+                <p class="collaborators">with Michael Leeds (2019)</p>
             </div>
 
-            <h3>Recent Presentations</h3>
-            <ul>
+            <h3>Recent Conferences</h3>
+            <ul class="presentation-list">
                 <li>American Society of Health Economists (2024)</li>
-                <li>Annual Health Economics Conference (AHEC) at the University of Pennsylvania (2023)</li>
                 <li>Cornell Health Economics Seminar (2022)</li>
                 <li>Association for Public Policy Analysis & Management (2021)</li>
             </ul>
@@ -312,7 +351,6 @@
             document.getElementById(sectionId + 'Nav').classList.add('active');
         }
 
-        // Initialize active section
         window.addEventListener('load', () => {
             const hash = window.location.hash.slice(1) || 'home';
             showSection(hash);
