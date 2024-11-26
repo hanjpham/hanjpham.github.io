@@ -3,272 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Han Pham - PhD Student in Public Policy at Cornell University, researching health care markets and policy">
     <title>Han Pham - PhD Student at Cornell University</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --cornell-red: #B31B1B;
+            --cornell-red-dark: #8B1515;
             --dark-gray: #333333;
             --medium-gray: #666666;
             --light-gray: #F5F5F5;
             --white: #FFFFFF;
+            --sidebar-width: 280px;
         }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+        
+        html {
+            scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Lora', serif;
             line-height: 1.6;
             background-color: var(--light-gray);
             color: var(--dark-gray);
             font-size: 16px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--white);
+            position: fixed;
+            height: 100vh;
+            padding: 40px 20px;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
-        .content-wrapper {
-            flex: 1 0 auto;
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 40px;
+            max-width: calc(100% - var(--sidebar-width));
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: var(--white);
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+
         .profile-photo {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             margin: 0 auto 20px;
             border: 3px solid var(--white);
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             object-fit: cover;
         }
-        h1, h2, h3 {
+
+        .sidebar-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-info h1 {
+            font-size: 1.8em;
+            margin: 10px 0 5px;
             color: var(--dark-gray);
         }
-        h1 {
-            font-size: 2.2em;
-            margin: 10px 0 5px;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 1.8em;
-            padding-bottom: 10px;
-            margin-top: 0;
-            color: var(--cornell-red);
-            border-bottom: 2px solid var(--cornell-red);
-        }
-        h3 {
-            font-size: 1.3em;
+
+        .sidebar-info p {
+            margin: 5px 0;
             color: var(--medium-gray);
+            font-size: 0.9em;
         }
+
         nav {
-            margin: 30px 0;
-            text-align: center;
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
+
         nav a {
             color: var(--dark-gray);
             text-decoration: none;
             padding: 10px 20px;
-            margin: 0 10px;
             font-size: 1em;
             transition: all 0.3s ease;
+            border-radius: 4px;
+            text-align: center;
         }
+
         nav a:hover, nav a.active {
-            color: var(--cornell-red);
-            font-weight: 700;
+            color: var(--white);
+            background-color: var(--cornell-red);
         }
+
         section {
-            margin-bottom: 40px;
             display: none;
             animation: fadeIn 0.5s;
-            padding: 30px;
             background-color: var(--white);
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+
         #home {
             display: block;
         }
+
+        h2 {
+            color: var(--cornell-red);
+            border-bottom: 2px solid var(--cornell-red);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--medium-gray);
+            margin-top: 25px;
+        }
+
+        .research-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .research-item:hover {
+            transform: translateX(10px);
+        }
+
+        .research-item h4 {
+            margin: 0 0 10px 0;
+            color: var(--cornell-red-dark);
+        }
+
         .contact-info {
             background-color: var(--light-gray);
             padding: 25px;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-top: 20px;
         }
-        .resume-header {
-            text-align: center;
-            margin-top: 10px;
+
+        .footer-links {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .resume-header p {
-            margin: 5px 0;
-            color: var(--medium-gray);
-        }
-        footer {
-            flex-shrink: 0;
-            background-color: var(--white);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        }
-        .footer-links a {
-            display: inline-block;
-            margin: 0 15px;
-        }
+
         .footer-links img {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             transition: opacity 0.3s ease;
         }
-        .footer-links img:hover {
+
+        .footer-links a:hover img {
             opacity: 0.7;
         }
 
-        /* Media Queries for Responsive Design */
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .sidebar {
+                width: 220px;
+                --sidebar-width: 220px;
             }
-            header {
-                padding: 20px 0;
-            }
+
             .profile-photo {
-                width: 150px;
-                height: 150px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            h3 {
-                font-size: 1.2em;
-            }
-            nav {
-                margin: 20px 0;
-            }
-            nav a {
-                padding: 8px 15px;
-                margin: 0 5px;
-                font-size: 0.9em;
-            }
-            section {
-                padding: 20px;
+                width: 140px;
+                height: 140px;
             }
         }
 
-        @media screen and (max-width: 480px) {
-            .profile-photo {
-                width: 120px;
-                height: 120px;
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
             }
-            h1 {
-                font-size: 1.6em;
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 20px;
             }
-            h2 {
-                font-size: 1.3em;
+
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 20px;
             }
-            h3 {
-                font-size: 1.1em;
-            }
-            nav a {
-                padding: 6px 10px;
-                margin: 0 3px;
-                font-size: 0.8em;
-            }
-            .footer-links a {
-                margin: 0 10px;
+
+            nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <div class="container">
-            <header>
-                <img src="prf.jpg" alt="Han Pham" class="profile-photo">
-                <h1>Han Pham</h1>
-                <div class="resume-header">
-                    <p>PhD Student</p>
-                    <p>Brooks School of Public Policy, Cornell University</p>
-                    <p>hp452@cornell.edu</p>
-                </div>
-            </header>
-            
-            <nav>
-                <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
-                <a href="#" onclick="showSection('research')" id="researchNav">Research</a>
-                <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
-                <a href="#" onclick="showSection('personal')" id="personalNav">Personal</a>
-            </nav>
-
-            <section id="home">
-                <h2>Welcome</h2>
-                <p>I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University. My research focuses on applied microeconomics, industrial organization, and public policies in health care markets.</p>
-                <p>Prior to my doctoral studies, I completed my bachelor's degree in Mathematical Economics at Temple University in Philadelphia. I'm passionate about leveraging economic principles to understand and improve health care systems and policies. My work aims to contribute to more efficient and equitable health care delivery.</p>
-            </section>
-
-            <section id="research">
-                <h2>Research</h2>
-                <h3>Research Interests</h3>
-                <ul>
-                    <li>Health care access</li>
-                    <li>Policy evaluation</li>
-                    <li>Physician workforce</li>
-                </ul>
-                <h3>Current Projects</h3>
-                <ul>
-                    <li>Updating</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Information</h2>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> hp452@cornell.edu</p>
-                    <p><strong>Office:</strong> Room 3308, Martha Van Rensselaer Hall</p>
-                    <p><strong>Department:</strong> Brooks School of Public Policy</p>
-                    <p><strong>Cornell University</strong><br>Cornell Brooks School of Public Policy<br>Ithaca, NY 14853</p>
-                </div>
-            </section>
-
-            <section id="personal">
-                <p>I live with my partner and our cat in Ithaca and Buffalo. Our favorite restaurants in Buffalo are Ristorante Lombardo, Overwinter Coffee, Butter Block Bakery, and Saigon Bangkok. I was born and raised in Bien Hoa, Vietnam.</p>
-                <p><a href="https://www.gardensbuffaloniagara.com/garden-walk-buffalo" target="_blank">Garden Walk Buffalo</a></p>
-                <p><a href="https://www.tenlivesclub.com/" target="_blank">Ten Lives Club Buffalo</a></p>
-            </section>
+    <aside class="sidebar">
+        <img src="prf.jpg" alt="Han Pham" class="profile-photo">
+        <div class="sidebar-info">
+            <h1>Han Pham</h1>
+            <p>PhD Student</p>
+            <p>Brooks School of Public Policy</p>
+            <p>Cornell University</p>
+            <p>hp452@cornell.edu</p>
         </div>
-    </div>
+        
+        <nav>
+            <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
+            <a href="#" onclick="showSection('research')" id="researchNav">Research</a>
+            <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
+        </nav>
 
-    <footer>
         <div class="footer-links">
-            <a href="https://www.linkedin.com/in/han-julie-pham-93414a104/" target="_blank">
+            <a href="https://www.linkedin.com/in/han-julie-pham-93414a104/" target="_blank" aria-label="LinkedIn Profile">
                 <img src="linkedinlogo.png" alt="LinkedIn">
             </a>
-            <a href="https://github.com/hanjpham" target="_blank">
+            <a href="https://github.com/hanjpham" target="_blank" aria-label="GitHub Profile">
                 <img src="githublogo.png" alt="GitHub">
             </a>
-            <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank">
+            <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank" aria-label="Cornell Profile">
                 <img src="cornelllogo.png" alt="Cornell">
             </a>
         </div>
-    </footer>
+    </aside>
+
+    <main class="main-content">
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>I'm a PhD student in Public Policy at the Brooks School of Public Policy, Cornell University, with an expected graduation in Spring 2026. My research focuses on health economics, industrial organization, and policy analysis, with particular emphasis on healthcare markets and policy implementation.</p>
+            <p>Prior to my doctoral studies, I completed my bachelor's degree in Applied Mathematics with honors at Temple University.</p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            
+            <h3>Job Market Paper</h3>
+            <div class="research-item">
+                <h4>Funding Reform and Physician Supply: Evaluating Policy Implementation Using Choice Models</h4>
+            </div>
+
+            <h3>Works in Progress</h3>
+            <div class="research-item">
+                <h4>Medical Education Training and Quality of Care: Evidence from Closings of Residency Programs</h4>
+                <p>with Sean Nicholson and Colleen Carey</p>
+            </div>
+            <div class="research-item">
+                <h4>Dangerous Alternatives: E-cigarette Health Risks and Perception in Smoking Cessation</h4>
+                <p>with Alan Mathios and Don Kenkel</p>
+            </div>
+
+            <h3>Conference Proceedings</h3>
+            <div class="research-item">
+                <h4>Business Cycles and Adolescent Mental Health: Evidence from Suicide Rates</h4>
+                <p>with Catherine Maclean</p>
+                <p><em>Department of Economics Undergraduate Paper Award, Runner-up, 2020</em></p>
+            </div>
+            <div class="research-item">
+                <h4>No Country for Young Women? The Impact of Restrictive Legislation on Maternal Health and Birth Outcomes in Texas</h4>
+                <p>with Michael Leeds (2019)</p>
+            </div>
+
+            <h3>Recent Presentations</h3>
+            <ul>
+                <li>American Society of Health Economists (2024)</li>
+                <li>Annual Health Economics Conference (AHEC) at the University of Pennsylvania (2023)</li>
+                <li>Cornell Health Economics Seminar (2022)</li>
+                <li>Association for Public Policy Analysis & Management (2021)</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> hp452@cornell.edu</p>
+                <p><strong>Phone:</strong> +1 (267)-516-7326</p>
+                <p><strong>Office:</strong> Room 3308, Martha Van Rensselaer Hall</p>
+                <p><strong>Address:</strong><br>
+                Cornell Brooks School of Public Policy<br>
+                Cornell University<br>
+                Ithaca, NY 14853</p>
+            </div>
+        </section>
+    </main>
 
     <script>
         function showSection(sectionId) {
@@ -282,6 +311,12 @@
             });
             document.getElementById(sectionId + 'Nav').classList.add('active');
         }
+
+        // Initialize active section
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.slice(1) || 'home';
+            showSection(hash);
+        });
     </script>
 </body>
 </html>
